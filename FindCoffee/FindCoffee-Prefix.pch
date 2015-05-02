@@ -1,0 +1,18 @@
+//
+//  FindCoffee-Prefix.pch
+//  FindCoffee
+//
+//  Created by Amy Wold on 4/25/15.
+//  Copyright (c) 2015 Amy Wold. All rights reserved.
+//
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#endif

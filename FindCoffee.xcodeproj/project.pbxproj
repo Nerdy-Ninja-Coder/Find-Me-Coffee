@@ -7,14 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1D27BD1AF57B6F00ABFB4C /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1D27BC1AF57B6F00ABFB4C /* coffee.png */; };
 		DCC263CA1AEB14C300493AB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC263C91AEB14C300493AB0 /* main.m */; };
 		DCC263CD1AEB14C300493AB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC263CC1AEB14C300493AB0 /* AppDelegate.m */; };
-		DCC263D01AEB14C300493AB0 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC263CF1AEB14C300493AB0 /* MasterViewController.m */; };
-		DCC263D31AEB14C300493AB0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC263D21AEB14C300493AB0 /* DetailViewController.m */; };
+		DCC263D01AEB14C300493AB0 /* FCMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC263CF1AEB14C300493AB0 /* FCMasterViewController.m */; };
+		DCC263D31AEB14C300493AB0 /* FCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC263D21AEB14C300493AB0 /* FCDetailViewController.m */; };
 		DCC263D61AEB14C300493AB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC263D41AEB14C300493AB0 /* Main.storyboard */; };
 		DCC263D81AEB14C300493AB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC263D71AEB14C300493AB0 /* Images.xcassets */; };
 		DCC263DB1AEB14C300493AB0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCC263D91AEB14C300493AB0 /* LaunchScreen.xib */; };
 		DCC263E71AEB14C300493AB0 /* FindCoffeeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC263E61AEB14C300493AB0 /* FindCoffeeTests.m */; };
+		DCC264011AEB177800493AB0 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC263F81AEB164500493AB0 /* libRestKit.a */; };
+		DCC264031AEB17A000493AB0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC264021AEB179F00493AB0 /* CFNetwork.framework */; };
+		DCC264051AEB17A900493AB0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC264041AEB17A900493AB0 /* CoreData.framework */; };
+		DCC264071AEB17B300493AB0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC264061AEB17B300493AB0 /* MobileCoreServices.framework */; };
+		DCC264091AEB17BC00493AB0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC264081AEB17BC00493AB0 /* Security.framework */; };
+		DCC2640B1AEB17C800493AB0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC2640A1AEB17C800493AB0 /* SystemConfiguration.framework */; };
+		DCC264111AEBCE3600493AB0 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC264101AEBCE3600493AB0 /* Venue.m */; };
+		DCC264141AEBD47800493AB0 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC264131AEBD47800493AB0 /* Location.m */; };
+		DCC264161AEBF93F00493AB0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DCC264151AEBF93E00493AB0 /* README.md */; };
+		DCC2641B1AEC01AA00493AB0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC2641A1AEC01AA00493AB0 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,24 +36,73 @@
 			remoteGlobalIDString = DCC263C31AEB14C300493AB0;
 			remoteInfo = FindCoffee;
 		};
+		DCC263F71AEB164500493AB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC263F01AEB164500493AB0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		DCC263F91AEB164500493AB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC263F01AEB164500493AB0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		DCC263FB1AEB164500493AB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC263F01AEB164500493AB0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		DCC263FD1AEB164500493AB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC263F01AEB164500493AB0 /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		DCC263FF1AEB176200493AB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC263F01AEB164500493AB0 /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC1D27BC1AF57B6F00ABFB4C /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
 		DCC263C41AEB14C300493AB0 /* FindCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC263C81AEB14C300493AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC263C91AEB14C300493AB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCC263CB1AEB14C300493AB0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCC263CC1AEB14C300493AB0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DCC263CE1AEB14C300493AB0 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		DCC263CF1AEB14C300493AB0 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		DCC263D11AEB14C300493AB0 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		DCC263D21AEB14C300493AB0 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		DCC263CE1AEB14C300493AB0 /* FCMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCMasterViewController.h; sourceTree = "<group>"; };
+		DCC263CF1AEB14C300493AB0 /* FCMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCMasterViewController.m; sourceTree = "<group>"; };
+		DCC263D11AEB14C300493AB0 /* FCDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCDetailViewController.h; sourceTree = "<group>"; };
+		DCC263D21AEB14C300493AB0 /* FCDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCDetailViewController.m; sourceTree = "<group>"; };
 		DCC263D51AEB14C300493AB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCC263D71AEB14C300493AB0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DCC263DA1AEB14C300493AB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DCC263E01AEB14C300493AB0 /* FindCoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindCoffeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC263E51AEB14C300493AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC263E61AEB14C300493AB0 /* FindCoffeeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindCoffeeTests.m; sourceTree = "<group>"; };
+		DCC263F01AEB164500493AB0 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		DCC264021AEB179F00493AB0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		DCC264041AEB17A900493AB0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DCC264061AEB17B300493AB0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		DCC264081AEB17BC00493AB0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DCC2640A1AEB17C800493AB0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DCC2640D1AEBCD7300493AB0 /* FindCoffee-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FindCoffee-Prefix.pch"; sourceTree = "<group>"; };
+		DCC2640F1AEBCE3600493AB0 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		DCC264101AEBCE3600493AB0 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		DCC264121AEBD47800493AB0 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		DCC264131AEBD47800493AB0 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		DCC264151AEBF93E00493AB0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DCC2641A1AEC01AA00493AB0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +110,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC2641B1AEC01AA00493AB0 /* MapKit.framework in Frameworks */,
+				DCC2640B1AEB17C800493AB0 /* SystemConfiguration.framework in Frameworks */,
+				DCC264091AEB17BC00493AB0 /* Security.framework in Frameworks */,
+				DCC264071AEB17B300493AB0 /* MobileCoreServices.framework in Frameworks */,
+				DCC264051AEB17A900493AB0 /* CoreData.framework in Frameworks */,
+				DCC264031AEB17A000493AB0 /* CFNetwork.framework in Frameworks */,
+				DCC264011AEB177800493AB0 /* libRestKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,12 +130,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC1D27B61AF57A5D00ABFB4C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DC1D27BC1AF57B6F00ABFB4C /* coffee.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		DC1D27BA1AF57A6600ABFB4C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DCC263CE1AEB14C300493AB0 /* FCMasterViewController.h */,
+				DCC263CF1AEB14C300493AB0 /* FCMasterViewController.m */,
+				DCC263D11AEB14C300493AB0 /* FCDetailViewController.h */,
+				DCC263D21AEB14C300493AB0 /* FCDetailViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DC1D27BB1AF57A7000ABFB4C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DCC2640F1AEBCE3600493AB0 /* Venue.h */,
+				DCC264101AEBCE3600493AB0 /* Venue.m */,
+				DCC264121AEBD47800493AB0 /* Location.h */,
+				DCC264131AEBD47800493AB0 /* Location.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		DCC263BB1AEB14C300493AB0 = {
 			isa = PBXGroup;
 			children = (
+				DCC263F01AEB164500493AB0 /* RestKit.xcodeproj */,
+				DCC264151AEBF93E00493AB0 /* README.md */,
 				DCC263C61AEB14C300493AB0 /* FindCoffee */,
 				DCC263E31AEB14C300493AB0 /* FindCoffeeTests */,
 				DCC263C51AEB14C300493AB0 /* Products */,
+				DCC2640C1AEB181D00493AB0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,12 +184,11 @@
 		DCC263C61AEB14C300493AB0 /* FindCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				DC1D27BB1AF57A7000ABFB4C /* Classes */,
+				DC1D27BA1AF57A6600ABFB4C /* ViewControllers */,
+				DC1D27B61AF57A5D00ABFB4C /* Images */,
 				DCC263CB1AEB14C300493AB0 /* AppDelegate.h */,
 				DCC263CC1AEB14C300493AB0 /* AppDelegate.m */,
-				DCC263CE1AEB14C300493AB0 /* MasterViewController.h */,
-				DCC263CF1AEB14C300493AB0 /* MasterViewController.m */,
-				DCC263D11AEB14C300493AB0 /* DetailViewController.h */,
-				DCC263D21AEB14C300493AB0 /* DetailViewController.m */,
 				DCC263D41AEB14C300493AB0 /* Main.storyboard */,
 				DCC263D71AEB14C300493AB0 /* Images.xcassets */,
 				DCC263D91AEB14C300493AB0 /* LaunchScreen.xib */,
@@ -103,6 +202,7 @@
 			children = (
 				DCC263C81AEB14C300493AB0 /* Info.plist */,
 				DCC263C91AEB14C300493AB0 /* main.m */,
+				DCC2640D1AEBCD7300493AB0 /* FindCoffee-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -124,6 +224,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DCC263F11AEB164500493AB0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCC263F81AEB164500493AB0 /* libRestKit.a */,
+				DCC263FA1AEB164500493AB0 /* RestKitTests.xctest */,
+				DCC263FC1AEB164500493AB0 /* RestKit.framework */,
+				DCC263FE1AEB164500493AB0 /* RestKitFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCC2640C1AEB181D00493AB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCC2641A1AEC01AA00493AB0 /* MapKit.framework */,
+				DCC2640A1AEB17C800493AB0 /* SystemConfiguration.framework */,
+				DCC264081AEB17BC00493AB0 /* Security.framework */,
+				DCC264061AEB17B300493AB0 /* MobileCoreServices.framework */,
+				DCC264041AEB17A900493AB0 /* CoreData.framework */,
+				DCC264021AEB179F00493AB0 /* CFNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +262,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				DCC264001AEB176200493AB0 /* PBXTargetDependency */,
 			);
 			name = FindCoffee;
 			productName = FindCoffee;
@@ -191,6 +316,12 @@
 			mainGroup = DCC263BB1AEB14C300493AB0;
 			productRefGroup = DCC263C51AEB14C300493AB0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DCC263F11AEB164500493AB0 /* Products */;
+					ProjectRef = DCC263F01AEB164500493AB0 /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				DCC263C31AEB14C300493AB0 /* FindCoffee */,
@@ -199,11 +330,44 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		DCC263F81AEB164500493AB0 /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = DCC263F71AEB164500493AB0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCC263FA1AEB164500493AB0 /* RestKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.xctest;
+			remoteRef = DCC263F91AEB164500493AB0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCC263FC1AEB164500493AB0 /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = DCC263FB1AEB164500493AB0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DCC263FE1AEB164500493AB0 /* RestKitFrameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.xctest;
+			remoteRef = DCC263FD1AEB164500493AB0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		DCC263C21AEB14C300493AB0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1D27BD1AF57B6F00ABFB4C /* coffee.png in Resources */,
+				DCC264161AEBF93F00493AB0 /* README.md in Resources */,
 				DCC263D61AEB14C300493AB0 /* Main.storyboard in Resources */,
 				DCC263DB1AEB14C300493AB0 /* LaunchScreen.xib in Resources */,
 				DCC263D81AEB14C300493AB0 /* Images.xcassets in Resources */,
@@ -225,9 +389,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC263CD1AEB14C300493AB0 /* AppDelegate.m in Sources */,
-				DCC263D01AEB14C300493AB0 /* MasterViewController.m in Sources */,
+				DCC263D01AEB14C300493AB0 /* FCMasterViewController.m in Sources */,
 				DCC263CA1AEB14C300493AB0 /* main.m in Sources */,
-				DCC263D31AEB14C300493AB0 /* DetailViewController.m in Sources */,
+				DCC264111AEBCE3600493AB0 /* Venue.m in Sources */,
+				DCC264141AEBD47800493AB0 /* Location.m in Sources */,
+				DCC263D31AEB14C300493AB0 /* FCDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +412,11 @@
 			isa = PBXTargetDependency;
 			target = DCC263C31AEB14C300493AB0 /* FindCoffee */;
 			targetProxy = DCC263E11AEB14C300493AB0 /* PBXContainerItemProxy */;
+		};
+		DCC264001AEB176200493AB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = DCC263FF1AEB176200493AB0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -353,9 +524,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
 				INFOPLIST_FILE = FindCoffee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -363,9 +541,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
 				INFOPLIST_FILE = FindCoffee/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -422,6 +607,7 @@
 				DCC263EC1AEB14C300493AB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCC263ED1AEB14C300493AB0 /* Build configuration list for PBXNativeTarget "FindCoffeeTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +616,7 @@
 				DCC263EF1AEB14C300493AB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

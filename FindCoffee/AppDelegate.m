@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "DetailViewController.h"
+#import "FCDetailViewController.h"
+#import <RestKit/RestKit.h>
 
 @interface AppDelegate ()
 

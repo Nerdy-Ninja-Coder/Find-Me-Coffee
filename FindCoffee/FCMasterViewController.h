@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  FCMasterViewController.h
 //  FindCoffee
 //
 //  Created by Amy Wold on 4/24/15.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController
-
+@interface FCMasterViewController : UITableViewController
 
 @end
 

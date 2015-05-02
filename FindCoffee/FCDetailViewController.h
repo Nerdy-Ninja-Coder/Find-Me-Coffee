@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  FCDetailViewController.h
 //  FindCoffee
 //
 //  Created by Amy Wold on 4/24/15.
@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@interface FCDetailViewController : UIViewController
 
 @property (strong, nonatomic) id detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+@property (strong, nonatomic) NSNumber *detailLat;
+@property (strong, nonatomic) NSNumber *detailLong;
 
 @end
 
