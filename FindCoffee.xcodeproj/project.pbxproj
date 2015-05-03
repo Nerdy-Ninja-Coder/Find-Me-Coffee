@@ -156,6 +156,7 @@
 				DCC264101AEBCE3600493AB0 /* Venue.m */,
 				DCC264121AEBD47800493AB0 /* Location.h */,
 				DCC264131AEBD47800493AB0 /* Location.m */,
+				DC1D27BA1AF57A6600ABFB4C /* ViewControllers */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -185,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				DC1D27BB1AF57A7000ABFB4C /* Classes */,
-				DC1D27BA1AF57A6600ABFB4C /* ViewControllers */,
 				DC1D27B61AF57A5D00ABFB4C /* Images */,
 				DCC263CB1AEB14C300493AB0 /* AppDelegate.h */,
 				DCC263CC1AEB14C300493AB0 /* AppDelegate.m */,

@@ -1,5 +1,5 @@
 //
-//  DetailViewController.m
+//  FCDetailViewController.m
 //  FindCoffee
 //
 //  Created by Amy Wold on 4/24/15.
@@ -21,7 +21,7 @@
 
 @implementation FCDetailViewController
 
-#pragma mark - Managing the details
+#pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem setDetailLat:(NSNumber*)newDetailLat setDetailLong:(NSNumber *) newDetailLong {
     if (_detailItem != newDetailItem) {
@@ -60,7 +60,7 @@
         
         // set point
         MKPointAnnotation *myAnnotation = [[MKPointAnnotation alloc]init];
-        // make the coordinate the coffee shop! ***
+        // make the coordinate the coffee shop
         myAnnotation.coordinate = CLLocationCoordinate2DMake(zoomLocation.latitude, zoomLocation.longitude  );
         myAnnotation.title = self.detailItem;
         
@@ -102,11 +102,11 @@
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    //if annotation is the user location, return nil to get default blue-dot...
+    // if annotation is the user location, return nil to get default blue-dot...
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
     
-    //create purple pin view for all other annotations...
+    // create green pin view for all other annotations...
     static NSString *reuseId = @"hello";
     
     MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseId];
@@ -123,22 +123,23 @@
     }
     else
     {
-        //if re-using view from another annotation, point view to current annotation...
+        // if re-using view from another annotation, point view to current annotation...
         pinView.annotation = annotation;
     }
     
     return pinView;
 }
 
--(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    id <MKAnnotation> annotation = [view annotation];
-    if ([annotation isKindOfClass:[MKPointAnnotation class]])
-    {
-        NSLog(@"Clicked Coffee Shop Details");
-    }
-    [self.detailItem description];
+//  *** I don't know if I'm going to use this yet
+//-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+//    id <MKAnnotation> annotation = [view annotation];
+//    if ([annotation isKindOfClass:[MKPointAnnotation class]])
+//    {
+//        NSLog(@"Clicked Coffee Shop Details");
+//    }
+//    [self.detailItem description];
 //    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Disclosure Pressed" message:@"Click Cancel to Go Back" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
 //    [alertView show];
-}
+//}
 
 @end

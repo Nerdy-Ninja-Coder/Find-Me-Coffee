@@ -17,10 +17,12 @@
 #define kCLIENTSECRET @"PUNMSQ1BKQHKDDVT3NKA2XZ2DIBGETK3IRUQPX0MIM0SD2LX"
 
 @interface FCMasterViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
+{
+    CLLocation *userCurrentLocation;
+}
 
 @property (nonatomic, strong) NSArray *venues;
 @property (nonatomic, strong) FCDetailViewController *detailViewController;
-
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
@@ -34,6 +36,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setUp];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:141.0f/255.0f green:84.0f/255.0f blue:33.0f/255.0f alpha:1.0f];
+
+}
+
+-(void)currentLocationIdentifier {
     _locationManager = [[CLLocationManager alloc]init];
     _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     _locationManager.delegate = self;
@@ -58,13 +67,15 @@
         // This is iOS 7 case.
         [_locationManager startUpdatingLocation];
     }
-    
-    [self configureRestKit];
-    [self loadVenues];
-
 }
-- (IBAction)refreshSearchButton:(id)sender {
-    [self loadVenues];
+
+// refresh results button
+//- (IBAction)refreshSearchButton:(id)sender {
+//    [self currentLocationIdentifier];
+//}
+
+-(void) setUp {
+    [self currentLocationIdentifier];
 }
 
 - (void)configureRestKit {
@@ -99,12 +110,12 @@
 }
 
 - (void)loadVenues {
-    //  *** need to use user location for this search ***
-    NSString *latLon = @"37.33,-122.03"; // approximate latLon of The Mothership
+    NSString *latlng = [NSString stringWithFormat:@"%f,%f", userCurrentLocation.coordinate.latitude, userCurrentLocation.coordinate.longitude];
+//    @"37.33,-122.03"; // approximate latLon of The Mothership
     NSString *clientID = kCLIENTID;
     NSString *clientSecret = kCLIENTSECRET;
     
-    NSDictionary *queryParams = @{@"ll" : latLon,
+    NSDictionary *queryParams = @{@"ll" : latlng,
                                   @"client_id" : clientID,
                                   @"client_secret" : clientSecret,
                                   @"categoryId" : @"4bf58dd8d48988d1e0931735",
@@ -135,6 +146,7 @@
         Venue *venue = _venues[indexPath.row];
         NSString *venueString = [NSString stringWithFormat:@"%@\n%@\n%@, %@",venue.name, venue.location.address, venue.location.city, venue.location.state];
         
+        // set the FCDetail items to the venue info
         detailView.detailItem = venueString;
         detailView.detailLat = venue.location.lat;
         detailView.detailLong = venue.location.lng;
@@ -162,6 +174,24 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0fm", venue.location.distance.floatValue];
     
     return cell;
+}
+
+#pragma mark - Location delegate
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    UIAlertView *errorAlert = [[UIAlertView alloc]initWithTitle:@"Error" message:@"There was an error retrieving your location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [errorAlert show];
+    NSLog(@"Error: %@",error.description);
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    userCurrentLocation = [locations objectAtIndex:0];
+//    [_locationManager stopUpdatingLocation];
+    self->userCurrentLocation = [[CLLocation alloc]initWithLatitude:userCurrentLocation.coordinate.latitude longitude:userCurrentLocation.coordinate.longitude];
+    
+    [self configureRestKit];
+    [self loadVenues];
 }
 
 @end
