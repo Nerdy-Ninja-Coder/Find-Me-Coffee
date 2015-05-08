@@ -38,7 +38,15 @@
     
     [self setUp];
     
-    self.view.backgroundColor = [UIColor colorWithRed:141.0f/255.0f green:84.0f/255.0f blue:33.0f/255.0f alpha:1.0f];
+    // set colors
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:141.0f/255.0f green:84.0f/255.0f blue:33.0f/255.0f alpha:1.0f];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:242.0f/255.0f green:204.0f/255.0f blue:155.0f/255.0f alpha:1.0f]}];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:242.0f/255.0f green:204.0f/255.0f blue:155.0f/255.0f alpha:0.7f] } forState:UIControlStateNormal];
+    self.navigationController.navigationBar.translucent = NO;
+/*
+    changed the back arrow chevron tint color in the app
+    delegate
+ */
 
 }
 
@@ -68,11 +76,6 @@
         [_locationManager startUpdatingLocation];
     }
 }
-
-// refresh results button
-//- (IBAction)refreshSearchButton:(id)sender {
-//    [self currentLocationIdentifier];
-//}
 
 -(void) setUp {
     [self currentLocationIdentifier];
@@ -110,8 +113,8 @@
 }
 
 - (void)loadVenues {
+    // gets the user location for use in search
     NSString *latlng = [NSString stringWithFormat:@"%f,%f", userCurrentLocation.coordinate.latitude, userCurrentLocation.coordinate.longitude];
-//    @"37.33,-122.03"; // approximate latLon of The Mothership
     NSString *clientID = kCLIENTID;
     NSString *clientSecret = kCLIENTSECRET;
     
@@ -119,7 +122,9 @@
                                   @"client_id" : clientID,
                                   @"client_secret" : clientSecret,
                                   @"categoryId" : @"4bf58dd8d48988d1e0931735",
-                                  @"v" : @"20140118"};
+                                  @"v" : @"20140118",
+                                  @"limit" : @"20",
+                                  @"radius" : @"8050" };
     
     [[RKObjectManager sharedManager] getObjectsAtPath:@"/v2/venues/search"
         parameters:queryParams
@@ -171,7 +176,10 @@
     
     Venue *venue = _venues[indexPath.row];
     cell.textLabel.text = venue.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0fm", venue.location.distance.floatValue];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.0f meters", venue.location.distance.floatValue];
+    
+    cell.textLabel.textColor = [UIColor colorWithRed:90.0f/255.0f green:55.0/255.0f blue:22.0f/255.0f alpha:1.0f];
+    cell.detailTextLabel.textColor = [UIColor colorWithRed:90.0f/255.0f green:55.0/255.0f blue:22.0f/255.0f alpha:0.7f];
     
     return cell;
 }

@@ -8,6 +8,7 @@
 
 #import "FCDetailViewController.h"
 #import "Venue.h"
+#import "MyAnnotationView.h"
 @import MapKit;
 
 #define METERS_PER_MILE 1609.344
@@ -48,8 +49,12 @@
         // set up mapView
         self.mapView.mapType = MKMapTypeHybrid;
         [self.mapView setShowsUserLocation:YES];
+        // disable user interaction
+        self.mapView.zoomEnabled = NO;
+//        self.mapView.scrollEnabled = NO;
+//        self.mapView.userInteractionEnabled = NO;
 
-        // set zoom
+        // set coffee shop location
         CLLocationCoordinate2D zoomLocation;
         zoomLocation.latitude = (CLLocationDegrees)[_detailLat doubleValue];
         zoomLocation.longitude= (CLLocationDegrees)[_detailLong doubleValue];
@@ -68,7 +73,9 @@
         
         // set description label
         self.detailDescriptionLabel.text = [self.detailItem description];
-
+        [self.detailDescriptionLabel setFont:[UIFont fontWithName:[NSString stringWithUTF8String:"HelveticaNeue-Bold"] size:30]];
+        self.detailDescriptionLabel.textColor = [UIColor colorWithRed:90.0f/255.0f green:55.0/255.0f blue:22.0f/255.0f alpha:1.0f];
+        self.detailDescriptionLabel.backgroundColor = [UIColor colorWithRed:242.0f/255.0f green:204.0f/255.0f blue:155.0f/255.0f alpha:1.0f];
     }
 }
 
@@ -77,7 +84,10 @@
     
     self.mapView.delegate = self;
     
+    self.view.backgroundColor = [UIColor colorWithRed:242.0f/255.0f green:204.0f/255.0f blue:155.0f/255.0f alpha:1.0f];
+    
     [self configureView];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -106,20 +116,14 @@
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
     
-    // create green pin view for all other annotations...
-    static NSString *reuseId = @"hello";
+    // create pin view for all other annotations...
+    static NSString *reuseId = @"coffee";
     
-    MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseId];
-    if (pinView == nil)
-    {
-        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseId];
-        pinView.pinColor = MKPinAnnotationColorGreen;
-        pinView.canShowCallout = YES;
-        
-        UIImageView *coffeeIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"coffee.png"]];
-        [coffeeIconView setFrame:CGRectMake(0, 0, 30, 30)];
+    MyAnnotationView *pinView = (MyAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseId];
 
-        pinView.leftCalloutAccessoryView = coffeeIconView;
+    if (!pinView) {
+        // set pin view to coffee1.png
+        pinView = [[MyAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:reuseId];
     }
     else
     {
@@ -129,17 +133,5 @@
     
     return pinView;
 }
-
-//  *** I don't know if I'm going to use this yet
-//-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-//    id <MKAnnotation> annotation = [view annotation];
-//    if ([annotation isKindOfClass:[MKPointAnnotation class]])
-//    {
-//        NSLog(@"Clicked Coffee Shop Details");
-//    }
-//    [self.detailItem description];
-//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Disclosure Pressed" message:@"Click Cancel to Go Back" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-//    [alertView show];
-//}
 
 @end

@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DC1D27BD1AF57B6F00ABFB4C /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1D27BC1AF57B6F00ABFB4C /* coffee.png */; };
+		DC487AC01AFD04BC006BCDBA /* coffee1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC487ABF1AFD04BC006BCDBA /* coffee1.png */; };
+		DC487AC61AFD07F8006BCDBA /* MyAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC487AC51AFD07F8006BCDBA /* MyAnnotationView.m */; };
+		DC487AC81AFD0B92006BCDBA /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = DC487AC71AFD0B92006BCDBA /* coffee.png */; };
+		DC487ACA1AFD1D33006BCDBA /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = DC487AC91AFD1D33006BCDBA /* user.png */; };
 		DCC263CA1AEB14C300493AB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC263C91AEB14C300493AB0 /* main.m */; };
 		DCC263CD1AEB14C300493AB0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC263CC1AEB14C300493AB0 /* AppDelegate.m */; };
 		DCC263D01AEB14C300493AB0 /* FCMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC263CF1AEB14C300493AB0 /* FCMasterViewController.m */; };
@@ -74,7 +77,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DC1D27BC1AF57B6F00ABFB4C /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
+		DC487ABF1AFD04BC006BCDBA /* coffee1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = coffee1.png; path = ../coffee1.png; sourceTree = "<group>"; };
+		DC487AC41AFD07F8006BCDBA /* MyAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotationView.h; sourceTree = "<group>"; };
+		DC487AC51AFD07F8006BCDBA /* MyAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotationView.m; sourceTree = "<group>"; };
+		DC487AC71AFD0B92006BCDBA /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
+		DC487AC91AFD1D33006BCDBA /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		DCC263C41AEB14C300493AB0 /* FindCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC263C81AEB14C300493AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC263C91AEB14C300493AB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -133,7 +140,9 @@
 		DC1D27B61AF57A5D00ABFB4C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				DC1D27BC1AF57B6F00ABFB4C /* coffee.png */,
+				DC487AC91AFD1D33006BCDBA /* user.png */,
+				DC487AC71AFD0B92006BCDBA /* coffee.png */,
+				DC487ABF1AFD04BC006BCDBA /* coffee1.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -156,6 +165,8 @@
 				DCC264101AEBCE3600493AB0 /* Venue.m */,
 				DCC264121AEBD47800493AB0 /* Location.h */,
 				DCC264131AEBD47800493AB0 /* Location.m */,
+				DC487AC41AFD07F8006BCDBA /* MyAnnotationView.h */,
+				DC487AC51AFD07F8006BCDBA /* MyAnnotationView.m */,
 				DC1D27BA1AF57A6600ABFB4C /* ViewControllers */,
 			);
 			name = Classes;
@@ -366,9 +377,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC1D27BD1AF57B6F00ABFB4C /* coffee.png in Resources */,
 				DCC264161AEBF93F00493AB0 /* README.md in Resources */,
+				DC487AC81AFD0B92006BCDBA /* coffee.png in Resources */,
 				DCC263D61AEB14C300493AB0 /* Main.storyboard in Resources */,
+				DC487AC01AFD04BC006BCDBA /* coffee1.png in Resources */,
+				DC487ACA1AFD1D33006BCDBA /* user.png in Resources */,
 				DCC263DB1AEB14C300493AB0 /* LaunchScreen.xib in Resources */,
 				DCC263D81AEB14C300493AB0 /* Images.xcassets in Resources */,
 			);
@@ -393,6 +406,7 @@
 				DCC263CA1AEB14C300493AB0 /* main.m in Sources */,
 				DCC264111AEBCE3600493AB0 /* Venue.m in Sources */,
 				DCC264141AEBD47800493AB0 /* Location.m in Sources */,
+				DC487AC61AFD07F8006BCDBA /* MyAnnotationView.m in Sources */,
 				DCC263D31AEB14C300493AB0 /* FCDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

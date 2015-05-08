@@ -18,7 +18,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // used to set  back arrow tint color
+    self.window.tintColor = [UIColor colorWithRed:242.0f/255.0f green:204.0f/255.0f blue:155.0f/255.0f alpha:0.7f];
     return YES;
 }
 
