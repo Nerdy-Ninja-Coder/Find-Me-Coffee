@@ -1,2 +1,2 @@
 Simple app that takes the users location and searches for coffee shops within 5 miles to location.  
-Displays results in table view with distance in meters.  On click brings up location on map and address.
+Displays results in table view with distance in meters.  On click bringshttp://www.highoncoding.com/Articles/804_Introduction_to_MapKit_Framework_for_iPhone_Development.aspx up location on map and address.

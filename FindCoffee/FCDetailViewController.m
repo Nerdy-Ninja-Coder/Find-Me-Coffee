@@ -51,8 +51,8 @@
         [self.mapView setShowsUserLocation:YES];
         // disable user interaction
         self.mapView.zoomEnabled = NO;
-//        self.mapView.scrollEnabled = NO;
-//        self.mapView.userInteractionEnabled = NO;
+        self.mapView.scrollEnabled = NO;
+        self.mapView.userInteractionEnabled = NO;
 
         // set coffee shop location
         CLLocationCoordinate2D zoomLocation;
